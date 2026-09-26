@@ -1,0 +1,9 @@
+// Cloudflare deploy settings: serve the finished site/ folder as static files.
+// "name" must match the Worker/project name in the Cloudflare dashboard.
+{
+  "name": "nzdo-y31s3q",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./site"
+  }
+}
