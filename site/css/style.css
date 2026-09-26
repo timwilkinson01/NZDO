@@ -1,0 +1,275 @@
+/* NZDO – site styles
+   Tweak the variables below to restyle the whole site. */
+
+:root {
+  --ink: #2b2b2b;
+  --muted: #626262;
+  --accent: #8a1c2b;          /* deep burgundy for links & highlights */
+  --accent-soft: #f6eef0;
+  --rule: #e1e4e6;
+  --bg: #fff;
+  --bg-alt: #f7f6f3;
+
+  --font-body: "Lora", Georgia, serif;
+  --font-head: "Playfair Display", Georgia, serif;
+
+  --wrap: 46rem;              /* reading width */
+  --wrap-wide: 72rem;         /* card/gallery width */
+  --card-w: 21rem;            /* target width of each concert card */
+  --gap: 1.75rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+body {
+  margin: 0;
+  font: 1.0625rem/1.7 var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 2px; }
+
+h1, h2, h3 { font-family: var(--font-head); font-weight: 400; line-height: 1.2; }
+h2 { font-size: 1.6rem; margin: 2.2rem 0 0.6rem; }
+
+/* ── header / nav ───────────────────────────────────────────── */
+
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  padding: 0.6rem clamp(1rem, 4vw, 2.5rem);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--rule);
+}
+.logo img { height: 2.4rem; width: auto; }
+
+.site-nav ul {
+  display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem;
+  list-style: none; margin: 0; padding: 0;
+}
+.site-nav a {
+  color: var(--ink); text-decoration: none;
+  font-size: 0.95rem; letter-spacing: 0.02em;
+  padding: 0.3rem 0; border-bottom: 2px solid transparent;
+}
+.site-nav a:hover, .site-nav a[aria-current] { border-bottom-color: var(--accent); }
+
+/* mobile menu: pure-CSS checkbox toggle */
+.nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+.nav-toggle-label { display: none; }
+
+@media (max-width: 48rem) {
+  .nav-toggle-label {
+    display: block; width: 2rem; height: 2rem; cursor: pointer; position: relative;
+  }
+  .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after {
+    content: ""; position: absolute; left: 0.25rem; right: 0.25rem; height: 2px; background: var(--ink);
+  }
+  .nav-toggle-label span { top: 50%; }
+  .nav-toggle-label span::before { top: -0.5rem; }
+  .nav-toggle-label span::after { top: 0.5rem; }
+  .nav-toggle:focus-visible + .nav-toggle-label { outline: 2px solid var(--accent); }
+
+  .site-nav { display: none; width: 100%; }
+  .nav-toggle:checked ~ .site-nav { display: block; }
+  .site-nav ul { flex-direction: column; padding-bottom: 0.5rem; }
+}
+
+/* ── banner ─────────────────────────────────────────────────── */
+
+.banner {
+  display: flex; align-items: center; justify-content: center;
+  min-height: clamp(9rem, 26vw, 18rem);
+  padding: 2rem 1rem;
+  background: var(--bg-alt) center / cover no-repeat;   /* image set inline by build.py */
+  text-align: center;
+}
+.banner h1 {
+  margin: 0; color: #fff;
+  font-size: clamp(2rem, 6vw, 3.75rem);
+  text-shadow: 0 2px 12px rgba(0,0,0,.4);
+}
+.banner:not([style]) h1 { color: var(--ink); text-shadow: none; }
+
+/* ── layout ─────────────────────────────────────────────────── */
+
+main { padding-bottom: 3rem; }
+.wrap      { max-width: var(--wrap);      margin: 0 auto; padding: 0 1.25rem; }
+.wrap-wide { max-width: var(--wrap-wide); margin: 0 auto; padding: 0 1.25rem; }
+main > section { margin-top: 2.5rem; }
+
+.lede { font-size: 1.15rem; }
+.small { font-size: 0.9rem; color: var(--muted); }
+.center { text-align: center; }
+
+blockquote {
+  margin: 1.5rem 0; padding: 0.25rem 0 0.25rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  font-style: italic; color: var(--muted);
+}
+blockquote footer { font-style: normal; font-size: 0.9rem; margin-top: 0.5rem; }
+
+.quotes { list-style: none; padding: 0; font-style: italic; }
+.quotes li { margin: 0.2rem 0; }
+.plain { list-style: none; padding: 0; }
+
+.button {
+  display: inline-block; padding: 0.6rem 1.4rem;
+  background: var(--accent); color: #fff; text-decoration: none; border-radius: 2px;
+}
+.button:hover { filter: brightness(1.15); }
+
+.video { position: relative; aspect-ratio: 16 / 9; max-width: 100%; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.prose .video { margin: 2rem 0; }
+
+.wide-photo { width: 100%; max-height: 30rem; object-fit: cover; border-radius: 4px; }
+
+/* home page */
+.stats {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap);
+  padding: 2rem 1rem; background: var(--bg-alt);
+}
+.stats div { flex: 1 1 10rem; max-width: 18rem; text-align: center; }
+.stats strong { display: block; font: 2rem/1.2 var(--font-head); color: var(--accent); }
+.stats span { font-size: 0.95rem; color: var(--muted); }
+
+.center-text { text-align: center; }
+
+.feature { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1rem 3rem; }
+.feature .prose { flex: 1 1 26rem; min-width: 0; }
+.feature .prose > :first-child { margin-top: 0; }
+.feature figure { flex: 0 1 20rem; margin: 0.5rem auto 0; }
+.feature figure img { border-radius: 4px; max-height: 32rem; object-fit: cover; }
+
+.band { background: var(--bg-alt); padding: 3rem 0; }
+.cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem 3rem; }
+.cta .video { flex: 1 1 22rem; max-width: 36rem; }
+.cta-text { flex: 0 1 20rem; text-align: center; }
+.cta-text h2 { margin-top: 0; }
+
+.testimonials { display: flex; flex-wrap: wrap; gap: var(--gap); }
+.testimonials blockquote {
+  flex: 1 1 22rem; margin: 0; padding: 1.25rem 1.5rem;
+  background: var(--bg-alt); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0;
+}
+.testimonials blockquote p { margin: 0; }
+
+/* next concert */
+.dates { display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1.5rem; }
+.dates dt { font-weight: 600; }
+.dates dd { margin: 0; }
+.sponsor { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 2.5rem; }
+.sponsor img { width: 10rem; }
+
+/* ── previous concerts: flex card list ──────────────────────── */
+
+.year-jump {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem;
+  margin-top: 1.5rem;
+}
+.year-jump a {
+  padding: 0.15rem 0.7rem; border: 1px solid var(--rule); border-radius: 999px;
+  text-decoration: none; font-size: 0.9rem; color: var(--ink);
+}
+.year-jump a:hover { border-color: var(--accent); color: var(--accent); }
+
+.concert-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.concert-card {
+  flex: 0 1 var(--card-w);        /* fixed target width, shrinks on small screens */
+  min-width: 0;
+  display: flex; flex-direction: column;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: box-shadow .2s, transform .2s;
+}
+.concert-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.08); transform: translateY(-2px); }
+.concert-card:target { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.card-img img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+.card-body { display: flex; flex-direction: column; flex: 1; padding: 1rem 1.25rem 1.25rem; }
+.card-body h2 { margin: 0; font-size: 1.8rem; }
+.card-body h2 a { color: var(--ink); text-decoration: none; }
+.card-meta { margin: 0.25rem 0 0.5rem; font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+.card-conductor { margin: 0.5rem 0 0; font-size: 0.95rem; }
+
+.works { padding-left: 1.1rem; margin: 0.25rem 0; }
+.concert-card .works { font-size: 0.95rem; line-height: 1.5; }
+.works li { margin: 0.25rem 0; }
+
+.card-links {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content: space-between;
+  margin: auto 0 0; padding-top: 0.9rem; font-size: 0.9rem;
+}
+.card-links .more { margin-left: auto; }
+
+/* ── year page ──────────────────────────────────────────────── */
+
+.donation {
+  margin: 1.75rem 0; padding: 1rem 1.25rem;
+  background: var(--accent-soft); border-radius: 4px;
+}
+.donation strong { font-family: var(--font-head); font-size: 1.35rem; color: var(--accent); }
+
+.resources { padding-left: 1.1rem; }
+.resources li { margin: 0.35rem 0; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 0.5rem;
+}
+.gallery img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  transition: opacity .2s;
+}
+.gallery a:hover img { opacity: .85; }
+
+.pager {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--rule);
+}
+
+/* ── lightbox (see js/lightbox.js) ─────────────────────────── */
+
+.lightbox {
+  width: 100vw; height: 100vh; max-width: none; max-height: none;
+  margin: 0; padding: 0; border: 0;
+  background: #111;
+}
+.lightbox::backdrop { background: #111; }
+.lightbox[open] { display: flex; align-items: center; justify-content: center; }
+.lightbox img { max-width: 94vw; max-height: 90vh; width: auto; }
+.lightbox button {
+  position: absolute; background: none; border: 0; color: #fff;
+  font-size: 2.5rem; line-height: 1; padding: 1rem; cursor: pointer; opacity: .8;
+}
+.lightbox button:hover { opacity: 1; }
+.lightbox .lb-close { top: 0; right: 0; }
+.lightbox .lb-prev { left: 0; top: 50%; transform: translateY(-50%); }
+.lightbox .lb-next { right: 0; top: 50%; transform: translateY(-50%); }
+
+/* ── footer ─────────────────────────────────────────────────── */
+
+.site-footer {
+  padding: 2rem 1rem; text-align: center;
+  font-size: 0.9rem; color: var(--muted);
+  background: var(--bg-alt); border-top: 1px solid var(--rule);
+}
+.site-footer p { margin: 0.25rem 0; }
