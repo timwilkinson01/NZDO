@@ -21,12 +21,13 @@ The **Previous concerts** page, every concert page, and the “total raised” a
 2. Make a folder `site/photos/2027_concert/` and drop the photos in (any names).
    The first photo is also used as the picture on the Previous concerts page.
 3. Put the programme/poster PDFs in `site/files/`.
-4. Double-click `site/previous-concerts.html` to check it in your browser.
+4. Double-click **Preview website (Windows).bat** (or **Preview website (Mac).command** on a Mac).
+   It picks up any new photos and opens the website in your browser.
    If there's a typo in `concerts.js`, the page shows a yellow box saying which line to look at.
 5. Publish (upload the changes to GitHub). The live site updates about a minute later.
 
-Note: new photos show up on the live site automatically, but not in the double-click preview
-until they have been published once. (Or run `node tools/list-photos.mjs` to update the preview.)
+After editing text only, you can also just double-click any `.html` file in `site/` –
+the "Preview website" step is only needed to pick up new or removed photos.
 
 ## For the technically minded
 
@@ -34,8 +35,9 @@ until they have been published once. (Or run `node tools/list-photos.mjs` to upd
   into the banner, and renders concerts from `concerts.js` (TOML wrapped in a JS call so it also
   works from `file://`, parsed by `site/js/vendor/toml.js` = smol-toml).
 - Concert pages are `concert.html?year=2019`. Old Weebly addresses (`/2019.html`) are redirected by `site/_redirects`.
-- `tools/list-photos.mjs` writes `site/js/photo-list.js`; Cloudflare runs it on every deploy via
-  `build.command` in `wrangler.jsonc`, then serves `site/` as static assets.
+- `site/js/photo-list.js` lists the photo files (a page can't list a folder itself). It's written by
+  `tools/make-photo-list.sh` (built-in shell commands only) – run by the Mac preview launcher and by
+  Cloudflare on every deploy (`build.command` in `wrangler.jsonc`) – and by the Windows `.bat` launcher.
 - `site/_headers` and `site/robots.txt` block search engines while this is a preview –
   delete them when the site goes live at nzdo.org.nz.
 - Local preview with a server: `python3 -m http.server 8637 --directory site`
