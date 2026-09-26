@@ -3,7 +3,7 @@
 {
   "name": "nzdo-y31s3q",
   "compatibility_date": "2026-09-01",
-  // Before each publish, list the photos in site/photos/ (see tools/make-photo-list.sh).
+  // Before each publish, list the photos in site/concert_photos/ (see tools/make-photo-list.sh).
   "build": {
     "command": "bash tools/make-photo-list.sh"
   },

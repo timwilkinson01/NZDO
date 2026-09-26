@@ -74,14 +74,14 @@
     return "$" + x.toLocaleString("en-NZ", { minimumFractionDigits: whole ? 0 : 2, maximumFractionDigits: 2 });
   }
 
-  // Photos for a year: any folder in photos/ whose name starts with the year, e.g. "2027_concert".
+  // Photos for a year: any folder in concert_photos/ whose name starts with the year, e.g. "2027_concert".
   function photosFor(year) {
     const folder = Object.keys(NZDO.photos).find((f) => f.startsWith(String(year)));
     if (!folder) return [];
     return NZDO.photos[folder]
       .slice()
       .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
-      .map((f) => `photos/${encodeURIComponent(folder)}/${encodeURIComponent(f)}`);
+      .map((f) => `concert_photos/${encodeURIComponent(folder)}/${encodeURIComponent(f)}`);
   }
 
   const where = (c) => link(c.venue, c.venue_url) + (c.city ? `, ${esc(c.city)}` : "");

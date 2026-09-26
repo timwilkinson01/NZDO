@@ -8,7 +8,7 @@ Everything the public sees is in the **`site`** folder.
 | To change…                         | Edit this file (in Notepad is fine)            |
 |------------------------------------|-------------------------------------------------|
 | A concert, or add a new one        | `site/concerts.js` (instructions at the top)    |
-| Concert photos                     | put them in `site/photos/2027_concert/` etc.    |
+| Concert photos                     | put them in `site/concert_photos/2027_concert/` etc.    |
 | Programmes, posters (PDFs)         | put them in `site/files/`                       |
 | Home, About, Contact, Join us, Next concert | `site/index.html`, `site/about.html`, … – edit the text between the “PAGE CONTENT” lines |
 
@@ -18,7 +18,7 @@ The **Previous concerts** page, every concert page, and the “total raised” a
 ## Adding a new concert
 
 1. Open `site/concerts.js`, copy one concert block, paste it at the top of the list, and change the details.
-2. Make a folder `site/photos/2027_concert/` and drop the photos in (any names).
+2. Make a folder `site/concert_photos/2027_concert/` and drop the photos in (any names).
    The first photo is also used as the picture on the Previous concerts page.
 3. Put the programme/poster PDFs in `site/files/`.
 4. Double-click **Preview website (Windows).bat** (or **Preview website (Mac).command** on a Mac).

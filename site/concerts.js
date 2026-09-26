@@ -9,7 +9,7 @@ NZDO.concerts(String.raw`# ✂ ────────────── edit b
 #  1. Copy one whole concert block (from "[[concert]]" down to the blank
 #     line before the next one), paste it at the top of the list below,
 #     and change the details.
-#  2. Put the photos in a new folder:   photos/2027_concert/
+#  2. Put the photos in a new folder:   concert_photos/2027_concert/
 #     (any file names – they are shown in name order; the first photo is
 #     also used on the "Previous concerts" page unless you set  image = ...)
 #  3. Put the programme / poster PDFs in the  files/  folder.
