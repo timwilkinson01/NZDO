@@ -1,32 +1,36 @@
-# ─────────────────────────────────────────────────────────────────────────────
-#  NZDO master concert list
+// ════════════════════════════════════════════════════════════════════════════
+//   NZDO CONCERT LIST  –  edit the text between the two ✂ lines.
+//   Leave these top lines and the very last line of the file alone.
+// ════════════════════════════════════════════════════════════════════════════
+NZDO.concerts(String.raw`# ✂ ────────────── edit below this line ──────────────
+
+# HOW TO ADD A CONCERT
 #
-#  This file drives BOTH the "Previous concerts" page and every per-year page
-#  (2012.html, 2013.html, …). To add a new year, copy the block at the top,
-#  paste it above the previous newest concert, edit it, and run:
+#  1. Copy one whole concert block (from "[[concert]]" down to the blank
+#     line before the next one), paste it at the top of the list below,
+#     and change the details.
+#  2. Put the photos in a new folder:   photos/2027_concert/
+#     (any file names – they are shown in name order; the first photo is
+#     also used on the "Previous concerts" page unless you set  image = ...)
+#  3. Put the programme / poster PDFs in the  files/  folder.
+#  4. Double-click previous-concerts.html to check it looks right.
 #
-#      python3 build.py
+# RULES
+#  • Text goes inside "double quotes".  Numbers and dates don't.
+#  • Lists go inside [ square brackets ], one item per line, each ending
+#    with a comma.
+#  • Links:   [text to show](https://address)      Italics:   *like this*
+#  • Lines starting with # are notes and are ignored.
+#  • Don't use the backtick character (the key left of 1) anywhere.
 #
-#  Text fields accept light markdown:  [link text](https://url)  and *italics*.
-#  Paths (image, programme, …) are relative to the site/ folder.
+# If you make a typo, the website will show a message saying which line
+# to look at.  Only year, date, venue and works are required; every other
+# line can be left out.
 #
-#  Photos: drop image files into  site/photos/<year>/  — they are picked up
-#  automatically (sorted by filename). No need to list them here.
-#
-#  Fields (only year, date, venue and works are required):
-#    year, date (YYYY-MM-DD), venue, venue_url, city,
-#    conductor, conductor_url, players,
-#    works         list of pieces performed (soloists written inline)
-#    image         card photo shown on the Previous concerts page
-#    banner        header image for the year page (defaults to image)
-#    note          extra sentence(s) shown after the intro on the year page
-#    programme     concert programme PDF      poster   poster PDF
-#    donation      amount raised (number)     recipient, recipient_url
-#    sponsors      sponsorship paragraph
-#    links         list of { text = "...", url = "..." } (press, radio, video)
-#    youtube       YouTube video id to embed
-#    quote         { text = "...", by = "..." }
-# ─────────────────────────────────────────────────────────────────────────────
+# FIELDS
+#  year, date (YYYY-MM-DD), venue, venue_url, city, conductor, conductor_url,
+#  players, note, works, image, banner, programme, poster, donation,
+#  recipient, recipient_url, sponsors, links, youtube, quote
 
 # Reused sponsorship wording, referenced below as  sponsors = "standard"
 [sponsor_text]
@@ -427,3 +431,6 @@ links = [
   { text = "Article in the University of Otago Bulletin, 13 July 2012", url = "files/obp5.pdf" },
   { text = "Article in On MAS, November 2012", url = "files/mas_article_nov_2012.pdf" },
 ]
+
+# ✂ ────────────── edit above this line ──────────────
+`);

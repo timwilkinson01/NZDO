@@ -5,40 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About – NZDO</title>
   <meta name="description" content="About the New Zealand Doctors Orchestra.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="logo" href="index.html"><img src="img/logographic-web-cropped.png" alt="NZDO – New Zealand Doctors Orchestra"></a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Show menu">
-    <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
-    <nav class="site-nav" aria-label="Main">
-      <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="next-concert.html">Next concert</a></li>
-<li><a href="previous-concerts.html">Previous concerts</a></li>
-<li><a href="join-us.html">Join us</a></li>
-<li><a href="about.html" aria-current="page">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), url('img/banners/2016.jpg')">
-    <h1>About</h1>
-  </div>
+<!-- The heading below becomes the big banner. data-banner is the banner photo. -->
+<h1 data-banner="img/banners/2016.jpg">About</h1>
 
-  <main>
-
+<!-- ═════════════ PAGE CONTENT – edit below this line ═════════════ -->
 <section class="wrap prose">
   <h2>What is the NZDO?</h2>
   <p>The New Zealand Doctors’ Orchestra brings doctors and medical students from across New Zealand together to make music at a high level. Once a year, the orchestra meets for an intensive rehearsal weekend and public concert.</p>
 
   <h2>How does it work?</h2>
-  <p>Players apply for each concert, including those who have played with the NZDO before. Around 65–85 musicians form a full symphony orchestra. Locations vary around New Zealand, with cities usually chosen because of suitable venues and supportive communities. More than 350 musicians have played with the NZDO since 2012.</p>
+  <p>Players apply for each concert, including those who have played with the NZDO before. Around 65–85 musicians form a full symphony orchestra. Locations vary around New Zealand, with cities usually chosen because of suitable venues and supportive communities. More than 350 musicians have played with the NZDO since <span data-fill="first_year">2012</span>.</p>
   <p>The orchestra meets annually over three days (Friday to Sunday) for intensive rehearsals and organised social events, culminating in a Sunday afternoon concert.</p>
 
   <h2>Who plays?</h2>
@@ -48,7 +28,7 @@
   <p>The NZDO brings together two parts of life that can easily become separated: medicine and music. It provides an opportunity to maintain or rediscover music alongside a medical career, while building friendships and collegiality across the medical community.</p>
 
   <h2>Music that gives back</h2>
-  <p>The New Zealand Doctors’ Orchestra is run on a unique model. Every dollar from public ticket sales is donated to a local community organisation; to date, these have been local hospices. This is because orchestra members pay an enrolment fee that covers the costs of staging each concert, including venue hire, rehearsal facilities and the conductor. We also receive some sponsorship, including for some student travel. Since our inaugural concert in 2012, our audiences have helped raise $91,122.85 for hospices throughout New Zealand while enjoying high-quality orchestral music performed by doctors and medical students.</p>
+  <p>The New Zealand Doctors’ Orchestra is run on a unique model. Every dollar from public ticket sales is donated to a local community organisation; to date, these have been local hospices. This is because orchestra members pay an enrolment fee that covers the costs of staging each concert, including venue hire, rehearsal facilities and the conductor. We also receive some sponsorship, including for some student travel. Since our inaugural concert in <span data-fill="first_year">2012</span>, our audiences have helped raise <span data-fill="total_raised">$91,122.85</span> for hospices throughout New Zealand while enjoying high-quality orchestral music performed by doctors and medical students.</p>
 
   <h2>Who runs the NZDO?</h2>
   <p>The New Zealand Doctors’ Orchestra is an independent, volunteer-run charitable organisation. It is organised by a small team of doctors – Tim Wilkinson, Lynette Murdoch and Tom Wilkinson – with support from volunteers, sponsors and the communities in which it performs.</p>
@@ -90,18 +70,9 @@
     <li><a href="https://van-magazine.com/mag/what-doctors-learn-by-playing-in-orchestras/" target="_blank" rel="noopener">Healing Invisibly: what doctors learn by playing music</a></li>
   </ul>
 </section>
+<!-- ═════════════ PAGE CONTENT – edit above this line ═════════════ -->
 
-  </main>
-
-  <footer class="site-footer">
-    <p>New Zealand Doctors Orchestra · Registered charity CC49785</p>
-    <p>
-      <a href="https://www.facebook.com/nzdoctorsorchestra" target="_blank" rel="noopener">Facebook</a> ·
-      <a href="https://www.instagram.com/newzealanddoctorsorchestra/" target="_blank" rel="noopener">Instagram</a> ·
-      <a href="contact.html">Contact</a>
-    </p>
-  </footer>
-
-  <script src="js/lightbox.js" defer></script>
+<!-- Adds the menu, footer and concert details. Leave this line in place. -->
+<script src="js/site.js"></script>
 </body>
 </html>

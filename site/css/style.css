@@ -1,6 +1,8 @@
 /* NZDO – site styles
    Tweak the variables below to restyle the whole site. */
 
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600&display=swap");
+
 :root {
   --ink: #2b2b2b;
   --muted: #626262;
@@ -88,7 +90,7 @@ h2 { font-size: 1.6rem; margin: 2.2rem 0 0.6rem; }
   display: flex; align-items: center; justify-content: center;
   min-height: clamp(9rem, 26vw, 18rem);
   padding: 2rem 1rem;
-  background: var(--bg-alt) center / cover no-repeat;   /* image set inline by build.py */
+  background: var(--bg-alt) center / cover no-repeat;   /* photo set by js/site.js from data-banner */
   text-align: center;
 }
 .banner h1 {
@@ -96,7 +98,7 @@ h2 { font-size: 1.6rem; margin: 2.2rem 0 0.6rem; }
   font-size: clamp(2rem, 6vw, 3.75rem);
   text-shadow: 0 2px 12px rgba(0,0,0,.4);
 }
-.banner:not([style]) h1 { color: var(--ink); text-shadow: none; }
+.banner:not(.has-image) h1 { color: var(--ink); text-shadow: none; }
 
 /* ── layout ─────────────────────────────────────────────────── */
 
@@ -139,7 +141,7 @@ blockquote footer { font-style: normal; font-size: 0.9rem; margin-top: 0.5rem; }
 }
 .stats div { flex: 1 1 10rem; max-width: 18rem; text-align: center; }
 .stats strong { display: block; font: 2rem/1.2 var(--font-head); color: var(--accent); }
-.stats span { font-size: 0.95rem; color: var(--muted); }
+.stats div > span { font-size: 0.95rem; color: var(--muted); }
 
 .center-text { text-align: center; }
 
@@ -264,6 +266,13 @@ blockquote footer { font-style: normal; font-size: 0.9rem; margin-top: 0.5rem; }
 .lightbox .lb-close { top: 0; right: 0; }
 .lightbox .lb-prev { left: 0; top: 50%; transform: translateY(-50%); }
 .lightbox .lb-next { right: 0; top: 50%; transform: translateY(-50%); }
+
+/* ── error message (e.g. a typo in concerts.js) ─────────────── */
+
+.site-error {
+  max-width: var(--wrap); margin: 2rem auto 0; padding: 1rem 1.25rem;
+  background: #fff4e5; border: 2px solid #e8a33d; border-radius: 4px; color: #5c3b00;
+}
 
 /* ── footer ─────────────────────────────────────────────────── */
 

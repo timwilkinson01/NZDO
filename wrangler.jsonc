@@ -1,8 +1,12 @@
-// Cloudflare deploy settings: serve the finished site/ folder as static files.
+// Cloudflare deploy settings: serve the site/ folder as static files.
 // "name" must match the Worker/project name in the Cloudflare dashboard.
 {
   "name": "nzdo-y31s3q",
   "compatibility_date": "2026-09-01",
+  // Before each publish, list the photos in site/photos/ (see tools/list-photos.mjs).
+  "build": {
+    "command": "node tools/list-photos.mjs"
+  },
   "assets": {
     "directory": "./site"
   }
