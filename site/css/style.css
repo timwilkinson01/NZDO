@@ -119,9 +119,10 @@ h2 { font-size: 1.6rem; margin: 2.2rem 0 0.6rem; }
 /* ── layout ─────────────────────────────────────────────────── */
 
 main { padding-bottom: 3rem; }
-.wrap      { max-width: var(--wrap);      margin: 0 auto; padding: 0 1.25rem; }
-.wrap-wide { max-width: var(--wrap-wide); margin: 0 auto; padding: 0 1.25rem; }
-main > section { margin-top: 2.5rem; }
+.wrap      { max-width: var(--wrap);      margin-inline: auto; padding-inline: 1.25rem; }
+.wrap-wide { max-width: var(--wrap-wide); margin-inline: auto; padding-inline: 1.25rem; }
+/* sections written in the page, and sections filled in by js/site.js (#concert-list, #concert) */
+main > section, main > div > section { margin-top: 2.5rem; }
 
 .lede { font-size: 1.15rem; }
 .small { font-size: 0.9rem; color: var(--muted); }
@@ -222,14 +223,17 @@ blockquote footer { font-style: normal; font-size: 0.9rem; margin-top: 0.5rem; }
 /* ── previous concerts: flex card list ──────────────────────── */
 
 .year-jump {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;
   margin: 1.5rem 0 2rem;
 }
 .year-jump a {
-  padding: 0.15rem 0.7rem; border: 1px solid var(--rule); border-radius: 999px;
+  width: 4.25rem; padding: 0.2rem 0; text-align: center;
+  border: 1px solid var(--rule); border-radius: 999px;
   text-decoration: none; font-size: 0.9rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  transition: border-color .15s, color .15s, background .15s;
 }
-.year-jump a:hover { border-color: var(--accent); color: var(--accent); }
+.year-jump a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 
 .concert-list {
   display: flex;
