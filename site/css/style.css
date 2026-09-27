@@ -213,6 +213,49 @@ blockquote footer { font-style: normal; font-size: 0.9rem; margin-top: 0.5rem; }
 }
 .testimonials blockquote p { margin: 0; }
 
+/* home page: upcoming concert announcement */
+.upcoming {
+  margin-top: 0;                      /* sits right under the banner */
+  padding: 2.5rem 1.25rem;
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--rule);
+}
+.upcoming-inner {
+  max-width: var(--wrap-wide); margin-inline: auto;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 2rem 3rem;
+}
+.upcoming-photo {
+  flex: 1 1 20rem; max-width: 30rem; min-width: 0;
+  aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.12);
+}
+.upcoming-text { flex: 1 1 22rem; min-width: 0; }
+.eyebrow {
+  margin: 0; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--accent); font-weight: 600;
+}
+.upcoming h2 { margin: 0.3rem 0 0.2rem; font-size: clamp(1.6rem, 4vw, 2.3rem); }
+.upcoming-venue { margin: 0 0 1rem; font-size: 1.1rem; }
+.upcoming-programme { list-style: none; margin: 0; padding: 0; }
+.upcoming-programme li {
+  padding: 0.35rem 0 0.35rem 0.9rem; border-left: 2px solid var(--accent); margin: 0.3rem 0;
+}
+.upcoming-programme span { display: block; font-size: 0.9rem; color: var(--muted); }
+.upcoming-conductor { margin: 0.6rem 0 0; color: var(--muted); }
+.upcoming-tickets {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem; margin: 1.5rem 0 1rem;
+}
+.upcoming-tickets p { margin: 0; font-size: 0.9rem; color: var(--muted); flex: 1 1 14rem; }
+.button-large { padding: 0.8rem 2rem; font-size: 1.1rem; }
+.upcoming-cause { margin: 0; font-size: 0.95rem; }
+/* on phones, show the date and tickets first and the photo after */
+@media (max-width: 48rem) {
+  .upcoming-photo { order: 2; }
+}
+
+/* placeholder text still to be filled in – shows bright yellow so it can't be missed */
+mark.todo { background: #ffe066; color: #000; padding: 0 0.25em; border-radius: 2px; font-size: 0.85em; }
+
 /* next concert */
 .dates { display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1.5rem; }
 .dates dt { font-weight: 600; }
