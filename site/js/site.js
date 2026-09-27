@@ -60,6 +60,27 @@
   const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const MONTHS = ["January", "February", "March", "April", "May", "June", "July",
     "August", "September", "October", "November", "December"];
+  const SITE_URL = "https://www.nzdo.org.nz";
+
+  function updateConcertMetadata(concert, description) {
+    const canonicalUrl = `${SITE_URL}/concert.html?year=${concert.year}`;
+    const imagePath = concert.banner || cardImage(concert) || "img/banners/index.jpg";
+    const imageUrl = new URL(imagePath, `${SITE_URL}/`).href;
+    document.title = `${concert.year} concert | New Zealand Doctors Orchestra`;
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.href = canonicalUrl;
+    const metadata = {
+      'meta[name="description"]': description,
+      'meta[property="og:title"]': document.title,
+      'meta[property="og:description"]': description,
+      'meta[property="og:url"]': canonicalUrl,
+      'meta[property="og:image"]': imageUrl,
+    };
+    Object.entries(metadata).forEach(([selector, content]) => {
+      const element = document.querySelector(selector);
+      if (element) element.setAttribute("content", content);
+    });
+  }
 
   function parseDate(d) {
     const iso = d instanceof Date ? d.toISOString() : String(d);
@@ -151,9 +172,37 @@
 
   function setBanner(el, img) {
     if (!img) return;
-    el.style.backgroundImage =
-      `linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), url("${img}")`;
+    el.style.backgroundImage = `url("${img}")`;
     el.classList.add("has-image");
+  }
+
+  let parallaxFramePending = false;
+  function updateBannerParallax() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const viewportCenter = window.innerHeight / 2;
+    document.querySelectorAll(".banner.has-image").forEach((banner) => {
+      const rect = banner.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+      const bannerCenter = rect.top + rect.height / 2;
+      const offset = (viewportCenter - bannerCenter) * 0.16;
+      banner.style.setProperty("--banner-parallax-offset", `${offset}px`);
+    });
+  }
+
+  function queueBannerParallaxUpdate() {
+    if (parallaxFramePending) return;
+    parallaxFramePending = true;
+    requestAnimationFrame(() => {
+      parallaxFramePending = false;
+      updateBannerParallax();
+    });
+  }
+
+  function initBannerParallax() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    window.addEventListener("scroll", queueBannerParallaxUpdate, { passive: true });
+    window.addEventListener("resize", queueBannerParallaxUpdate);
+    updateBannerParallax();
   }
 
   function showError(main, html) {
@@ -210,7 +259,8 @@
     }
     const c = cs[i], newer = cs[i - 1], older = cs[i + 1];
     const photos = photosFor(c.year);
-    document.title = `${c.year} concert – NZDO`;
+    const description = `See the programme, soloists and photos from the ${c.year} New Zealand Doctors Orchestra concert at ${c.venue}${c.city ? ` in ${c.city}` : ""} on ${longDate(c.date)}.`;
+    updateConcertMetadata(c, description);
     h1.textContent = `${c.year} concert`;
     setBanner(banner, c.banner || cardImage(c));
 
@@ -328,6 +378,7 @@
       if (one) renderConcert(one, banner);
     }
     lightbox();
+    initBannerParallax();
   }
 
   start();

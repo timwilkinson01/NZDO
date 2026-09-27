@@ -50,7 +50,7 @@ players = 82
 note = "It was a sold-out performance."
 works = [
   "Wagner: *Tristan und Isolde* – Prelude and Liebestod",
-  "Beethoven: Piano concerto 5 (Emperor), soloist [Dr Ben Booker](https://www.rnz.co.nz/concert/programmes/three-to-seven/audio/2019051849/booker-plays-beethoven)",
+  "Beethoven: *Piano Concerto No. 5 (Emperor)*, soloist [Dr Ben Booker](https://www.rnz.co.nz/concert/programmes/three-to-seven/audio/2019051849/booker-plays-beethoven)",
   "Strauss: *Tod und Verklärung*",
 ]
 image = "img/cards/2026.jpeg"
@@ -80,7 +80,7 @@ note = "It was a sold-out performance."
 works = [
   "John Rimmer: *Cloud Fanfares*",
   "Stravinsky: *Firebird* suite",
-  "Tchaikovsky: Violin concerto, soloist [Dr Rachel Moxham](https://www.opusorchestra.co.nz/meet-the-orchestra)",
+  "Tchaikovsky: *Violin concerto*, soloist [Dr Rachel Moxham](https://www.opusorchestra.co.nz/meet-the-orchestra)",
 ]
 image = "img/cards/2025.jpeg"
 banner = "img/banners/2025.jpg"
@@ -106,7 +106,7 @@ conductor_url = "https://www.napierchoir.org.nz/about"
 players = 67
 works = [
   "Tchaikovsky: *Romeo and Juliet* Overture",
-  "Brahms: Concerto for violin and cello, soloists Dr Osman Ozturk and [Dr Catherine Kwak](https://www.auckland.ac.nz/en/news/2021/07/07/musical-medicine-student-claims-top-prize-for-cello-performance.html)",
+  "Brahms: *Concerto for violin and cello*, soloists Dr Osman Ozturk and [Dr Catherine Kwak](https://www.auckland.ac.nz/en/news/2021/07/07/musical-medicine-student-claims-top-prize-for-cello-performance.html)",
   "Prokofiev: *Romeo & Juliet* Suite 2",
 ]
 image = "img/cards/2024.jpg"
@@ -137,7 +137,7 @@ players = 76
 works = [
   "Anthony Ritchie: *Procession*",
   "Canteloube: *Baïlèro* from Songs of the Auvergne, soloist Dr Frances Campbell",
-  "Shostakovich: Symphony 5",
+  "Shostakovich: *Symphony No. 5*",
 ]
 image = "img/cards/2023.jpeg"
 banner = "img/banners/2023.jpeg"
@@ -165,8 +165,8 @@ city = "Nelson"
 conductor = "Mark Hodgkinson"
 players = 58
 works = [
-  "Mozart: Piano concerto 24 in C minor K491, soloist [Dr Louise Webster](https://sounz.org.nz/contributors/1813)",
-  "Beethoven: Symphony 3",
+  "Mozart: *Piano Concerto No. 24 in C minor K491*, soloist [Dr Louise Webster](https://sounz.org.nz/contributors/1813)",
+  "Beethoven: *Symphony No. 3*",
 ]
 image = "img/cards/2022.jpg"
 banner = "img/banners/2022.jpg"
@@ -189,8 +189,8 @@ players = 59
 note = "An additional 9 players from Wellington could not join us due to the Covid-19 lockdown over that weekend – we missed our Wellington friends."
 works = [
   "Lilburn: *Drysdale* overture",
-  "Dvořák: Cello concerto, soloist [Dr Catherine Kwak](https://www.auckland.ac.nz/en/news/2021/07/07/musical-medicine-student-claims-top-prize-for-cello-performance.html)",
-  "Vaughan Williams: Symphony 5",
+  "Dvořák: *Cello concerto*, soloist [Dr Catherine Kwak](https://www.auckland.ac.nz/en/news/2021/07/07/musical-medicine-student-claims-top-prize-for-cello-performance.html)",
+  "Vaughan Williams: *Symphony No. 5*",
 ]
 image = "img/cards/2021.jpg"
 banner = "img/banners/2021.jpg"
@@ -206,7 +206,7 @@ sponsors = "standard"
 year = 2019
 date = 2019-06-23
 venue = "Dunedin Town Hall"
-venue_url = "https://dunedinvenues.co.nz/venue-hire/dunedin-centre/dunedin-town-hall/"
+venue_url = "https://dunedinvenues.co.nz/venues/dunedin-town-hall"
 city = "Dunedin"
 conductor = "Peter Adams"
 conductor_url = "https://www.otago.ac.nz/mtpa/staff/otago624986.html"
@@ -214,8 +214,8 @@ players = 69
 works = [
   "Anthony Ritchie: *Hippocratic Hymn* – a commissioned overture",
   "Brahms: *Academic Festival* overture",
-  "Séjourné: Marimba concerto, soloist Rachel Thomas (Auckland medical student)",
-  "Dvořák: Symphony 9",
+  "Séjourné: *Marimba concerto*, soloist Rachel Thomas (Auckland medical student)",
+  "Dvořák: *Symphony No. 9*",
 ]
 image = "img/cards/2019.jpg"
 banner = "img/banners/2019.jpg"
@@ -243,7 +243,7 @@ conductor_url = "https://www.napierchoir.org.nz/about"
 players = 78
 works = [
   "Turina: *Danzas Fantásticas*",
-  "Schumann: Cello concerto, soloist [Paul van Houtte](https://www.iheart.com/podcast/269-openarted-73834327/episode/what-is-more-important-than-any-75977160/) (Auckland medical student)",
+  "Schumann: *Cello concerto*, soloist [Paul van Houtte](https://www.iheart.com/podcast/269-openarted-73834327/episode/what-is-more-important-than-any-75977160/) (Auckland medical student)",
   "Mussorgsky: *Pictures at an Exhibition*",
 ]
 image = "img/cards/2018.jpg"
@@ -268,8 +268,8 @@ conductor = "Mark Hodgkinson"
 players = 48
 works = [
   "Rossini: Overture to *The Italian Girl in Algiers*",
-  "Mozart: Concerto for flute and harp, soloists Dr Duncan Watts (Dunedin anaesthetist) and Dr Vanessa Souter (Wellington GP)",
-  "Beethoven: Symphony No 8",
+  "Mozart: *Concerto for flute and harp*, soloists Dr Duncan Watts (Dunedin anaesthetist) and Dr Vanessa Souter (Wellington GP)",
+  "Beethoven: *Symphony No. 8*",
   "Dvořák: *Czech Suite* (final movement)",
 ]
 image = "img/cards/2017.jpg"
@@ -278,7 +278,7 @@ programme = "files/nzdo_concert_programme_2017.pdf"
 poster = "files/nzdo_concert_poster_2017.pdf"
 donation = 6894.90
 recipient = "Nurse Maude Hospice"
-recipient_url = "https://nursemaude.org.nz/hospice-and-community-palliative-care/"
+recipient_url = "https://www.nursemaude.org.nz/hospice-palliative-care-service"
 sponsors = "standard"
 links = [
   { text = "Letter to the editor of The Press from John Emeleus, a well-respected musician, composer and teacher", url = "files/letter_to_editor.pdf" },
@@ -294,8 +294,8 @@ conductor = "José Aparicio"
 conductor_url = "https://www.napierchoir.org.nz/about"
 players = 88
 works = [
-  "Beethoven: Violin concerto, soloist Dr Kiarash Taghavi (paediatric surgical registrar)",
-  "Mahler: Symphony No 1",
+  "Beethoven: *Violin concerto*, soloist Dr Kiarash Taghavi (paediatric surgical registrar)",
+  "Mahler: *Symphony No. 1*",
 ]
 image = "img/cards/2016.jpg"
 banner = "img/banners/2016.jpg"
@@ -321,8 +321,8 @@ conductor = "Mark Hodgkinson"
 players = 79
 works = [
   "Lilburn: *Festival* overture",
-  "Beethoven: Triple concerto, soloists [Trio Pohádka](http://www.triopohadka.com/) (Dr Shyam Sankaran, Auckland radiology registrar; Lisa Chung & Petr Tomek)",
-  "Sibelius: Symphony No 2",
+  "Beethoven: *Triple concerto*, soloists [Trio Pohádka](http://www.triopohadka.com/) (Dr Shyam Sankaran, Auckland radiology registrar; Lisa Chung & Petr Tomek)",
+  "Sibelius: *Symphony No. 2*",
 ]
 image = "img/cards/2015.jpg"
 banner = "img/banners/2015.jpg"
@@ -352,9 +352,9 @@ conductor = "Mark Hodgkinson"
 players = 71
 works = [
   "*I never will* – a commissioned work by one of our players, [Dr Louise Webster](https://sounz.org.nz/contributors/1813)",
-  "Mozart: Clarinet concerto (first movement), soloist Ryan Cha (final-year medical student)",
-  "Elgar: *Pomp and Circumstance* March No 1",
-  "Brahms: Symphony No 2",
+  "Mozart: *Clarinet concerto* (first movement), soloist Ryan Cha (final-year medical student)",
+  "Elgar: *Pomp and Circumstance March No. 1*",
+  "Brahms: *Symphony No. 2*",
 ]
 image = "img/cards/2014.png"
 banner = "img/banners/2014.jpg"
@@ -380,8 +380,8 @@ conductor = "Mark Hodgkinson"
 players = 74
 works = [
   "Britten: *King Arthur* suite (movements 1 & 3)",
-  "Sibelius: Violin concerto (first movement), soloist Dr David Choi (Auckland house surgeon)",
-  "Saint-Saëns: *Organ* Symphony, soloist Dr Jonathan Christiansen (Auckland cardiologist)",
+  "Sibelius: *Violin concerto* (first movement), soloist Dr David Choi (Auckland house surgeon)",
+  "Saint-Saëns: *Organ Symphony*, soloist Dr Jonathan Christiansen (Auckland cardiologist)",
 ]
 image = "img/cards/2013.jpg"
 banner = "img/banners/2013.jpg"
@@ -409,9 +409,9 @@ players = 65
 note = "The inaugural concert received a standing ovation, having sold out 48 hours in advance. About one third of the players were medical students."
 works = [
   "Lilburn: *Aotearoa* Overture",
-  "Schumann: Piano concerto (first movement), soloist Adrian Secker (Nelson surgeon)",
+  "Schumann: *Piano concerto* (first movement), soloist Adrian Secker (Nelson surgeon)",
   "Puccini: *O mio babbino caro* (from Gianni Schicchi) and *Chi il bel sogno di Doretta* (from La Rondine), soloist Tara Martin (Christchurch physiotherapist)",
-  "Tchaikovsky: Symphony No 5",
+  "Tchaikovsky: *Symphony No. 5*",
 ]
 image = "img/cards/2012.jpg"
 banner = "img/banners/2012.jpg"

@@ -38,6 +38,7 @@ the "Preview website" step is only needed to pick up new or removed photos.
 - `site/js/photo-list.js` lists the photo files (a page can't list a folder itself). It's written by
   `tools/make-photo-list.sh` (built-in shell commands only) – run by the Mac preview launcher and by
   Cloudflare on every deploy (`build.command` in `wrangler.jsonc`) – and by the Windows `.bat` launcher.
-- `site/_headers` and `site/robots.txt` block search engines while this is a preview –
-  delete them when the site goes live at nzdo.org.nz.
+- `site/robots.txt` allows search engines and points them to `site/sitemap.xml`.
+- The site uses `https://www.nzdo.org.nz` as its canonical public domain. Keep the
+  sitemap and page canonical URLs in step if the public domain changes.
 - Local preview with a server: `python3 -m http.server 8637 --directory site`

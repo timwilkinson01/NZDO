@@ -87,18 +87,34 @@ h2 { font-size: 1.6rem; margin: 2.2rem 0 0.6rem; }
 /* ── banner ─────────────────────────────────────────────────── */
 
 .banner {
+  position: relative; isolation: isolate; overflow: hidden;
   display: flex; align-items: center; justify-content: center;
   min-height: clamp(9rem, 26vw, 18rem);
   padding: 2rem 1rem;
   background: var(--bg-alt) center / cover no-repeat;   /* photo set by js/site.js from data-banner */
   text-align: center;
 }
+.banner.has-image {
+  background-position: center calc(50% + var(--banner-parallax-offset, 0px));
+  background-size: cover; background-repeat: no-repeat;
+}
+.banner.has-image::before {
+  content: "";
+  position: absolute; inset: 0; z-index: 0;
+  background: rgba(0,0,0,.35);
+  pointer-events: none;
+}
 .banner h1 {
+  position: relative; z-index: 1;
   margin: 0; color: #fff;
   font-size: clamp(2rem, 6vw, 3.75rem);
   text-shadow: 0 2px 12px rgba(0,0,0,.4);
 }
 .banner:not(.has-image) h1 { color: var(--ink); text-shadow: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .banner.has-image { background-position: center; }
+}
 
 /* ── layout ─────────────────────────────────────────────────── */
 
@@ -135,6 +151,29 @@ blockquote footer { font-style: normal; font-size: 0.9rem; margin-top: 0.5rem; }
 .wide-photo { width: 100%; max-height: 30rem; object-fit: cover; border-radius: 4px; }
 
 /* home page */
+/* 2027 audience-promo mockup styles; uncomment when ready to publish.
+.concert-promo {
+  display: grid; grid-template-columns: 1fr 1fr;
+  margin: 2.5rem auto 0;
+  overflow: hidden; border-radius: 6px;
+  background: #101521; color: #fff;
+  box-shadow: 0 12px 36px rgba(10, 20, 38, .16);
+}
+.concert-promo-art { width: 100%; height: 100%; min-height: 100%; object-fit: cover; }
+.concert-promo-copy { align-self: center; padding: clamp(1.5rem, 4vw, 3.5rem); }
+.concert-promo-copy h2 { margin: .2rem 0 .75rem; font-size: clamp(2rem, 4vw, 3.2rem); }
+.concert-promo-copy p { max-width: 34rem; }
+.promo-kicker { margin: 0; color: #80d8e4; font: 600 .85rem/1.4 var(--font-body); letter-spacing: .12em; text-transform: uppercase; }
+.promo-date { margin: 1.3rem 0 0; color: #f4cf69; font: 600 1.25rem/1.4 var(--font-body); }
+.promo-venue { margin: .25rem 0 1rem; font-size: 1.1rem; }
+.promo-ticket-note { margin: 1.25rem 0 .6rem; font-size: .95rem; color: #e9e6dc; }
+.promo-button { background: #f4cf69; color: #151923; font-weight: 600; }
+.promo-button:hover { filter: brightness(1.08); }
+.ticket-info { margin: 2rem 0; padding: .75rem 1.25rem 1rem; background: var(--accent-soft); border-left: 3px solid var(--accent); }
+.ticket-info h2 { margin-top: .5rem; }
+.ticket-info p { margin-bottom: .3rem; }
+*/
+
 .stats {
   display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap);
   padding: 2rem 1rem; background: var(--bg-alt);
@@ -157,6 +196,14 @@ blockquote footer { font-style: normal; font-size: 0.9rem; margin-top: 0.5rem; }
 .cta-text { flex: 0 1 20rem; text-align: center; }
 .cta-text h2 { margin-top: 0; }
 
+/* 2027 audience-promo responsive mockup styles; uncomment when ready to publish.
+@media (max-width: 42rem) {
+  .concert-promo { grid-template-columns: 1fr; }
+  .concert-promo-art { max-height: 15rem; }
+  .concert-promo-copy { padding: 1.5rem; }
+}
+*/
+
 .testimonials { display: flex; flex-wrap: wrap; gap: var(--gap); }
 .testimonials blockquote {
   flex: 1 1 22rem; margin: 0; padding: 1.25rem 1.5rem;
@@ -175,7 +222,7 @@ blockquote footer { font-style: normal; font-size: 0.9rem; margin-top: 0.5rem; }
 
 .year-jump {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem;
-  margin-top: 1.5rem;
+  margin: 1.5rem 0 2rem;
 }
 .year-jump a {
   padding: 0.15rem 0.7rem; border: 1px solid var(--rule); border-radius: 999px;
