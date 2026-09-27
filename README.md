@@ -36,9 +36,17 @@ the "Preview website" step is only needed to pick up new or removed photos.
   works from `file://`, parsed by `site/js/vendor/toml.js` = smol-toml).
 - Concert pages are `concert.html?year=2019`. Old Weebly addresses (`/2019.html`) are redirected by `site/_redirects`.
 - `site/js/photo-list.js` lists the photo files (a page can't list a folder itself). It's written by
-  `tools/make-photo-list.sh` (built-in shell commands only) – run by the Mac preview launcher and by
-  Cloudflare on every deploy (`build.command` in `wrangler.jsonc`) – and by the Windows `.bat` launcher.
+  `tools/make-photo-list.sh` (built-in shell commands only) – run by the Mac preview launcher, the
+  Windows `.bat` launcher, GitHub Actions before each Pages deploy, and Cloudflare on every deploy
+  (`build.command` in `wrangler.jsonc`).
 - `site/robots.txt` allows search engines and points them to `site/sitemap.xml`.
 - The site uses `https://www.nzdo.org.nz` as its canonical public domain. Keep the
   sitemap and page canonical URLs in step if the public domain changes.
 - Local preview with a server: `python3 -m http.server 8637 --directory site`
+
+## Hosting on GitHub Pages
+
+The `Deploy NZDO website` workflow publishes the contents of `site/` whenever a change is pushed to `main`.
+The repository is configured to use `www.nzdo.org.nz` as its custom domain. DNS at Freeparking still needs to
+point that domain to GitHub Pages before visitors will see this copy of the site; leave email-related DNS
+records such as MX and TXT records unchanged.
