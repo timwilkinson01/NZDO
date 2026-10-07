@@ -31,33 +31,31 @@ if [ "$REMOTE_URL" != "https://github.com/timwilkinson01/NZDO.git" ]; then
   exit 1
 fi
 
-if [ -z "$(git status --porcelain)" ]; then
-  echo "There are no local changes to save or upload."
-  pause_to_close
-  exit 0
+if [ -n "$(git status --porcelain)" ]; then
+  echo "These files will be saved and uploaded:"
+  git status --short
+  echo
+  read -r -p "In a few words, what did you change? " SUMMARY
+  if [ -z "${SUMMARY//[[:space:]]/}" ]; then
+    echo "Please enter a short description. Nothing was changed or uploaded."
+    pause_to_close
+    exit 1
+  fi
+
+  git add -A || {
+    echo "Git could not prepare the changes. Nothing was uploaded."
+    pause_to_close
+    exit 1
+  }
+
+  git commit -m "$SUMMARY" || {
+    echo "Git could not save the changes. Nothing was uploaded."
+    pause_to_close
+    exit 1
+  }
+else
+  echo "Your changes are already saved. I’ll check GitHub and upload them if needed."
 fi
-
-echo "These files will be saved and uploaded:"
-git status --short
-echo
-read -r -p "In a few words, what did you change? " SUMMARY
-if [ -z "${SUMMARY//[[:space:]]/}" ]; then
-  echo "Please enter a short description. Nothing was changed or uploaded."
-  pause_to_close
-  exit 1
-fi
-
-git add -A || {
-  echo "Git could not prepare the changes. Nothing was uploaded."
-  pause_to_close
-  exit 1
-}
-
-git commit -m "$SUMMARY" || {
-  echo "Git could not save the changes. Nothing was uploaded."
-  pause_to_close
-  exit 1
-}
 
 echo
 echo "Checking for updates in the NZDO GitHub repository..."
