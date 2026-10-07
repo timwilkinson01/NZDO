@@ -137,6 +137,8 @@ blockquote footer { font-style: normal; font-size: 0.9rem; margin-top: 0.5rem; }
 
 .quotes { list-style: none; padding: 0; font-style: italic; }
 .quotes li { margin: 0.2rem 0; }
+.audience-reasons { padding-left: 1.25rem; }
+.audience-reasons li { margin: 0.75rem 0; }
 .plain { list-style: none; padding: 0; }
 
 .button {
