@@ -329,6 +329,26 @@ mark.todo { background: #ffe066; color: #000; padding: 0 0.25em; border-radius: 
 .resources { padding-left: 1.1rem; }
 .resources li { margin: 0.35rem 0; }
 
+.article-feature {
+  display: flex; align-items: stretch; gap: 1.25rem;
+  margin: 1.75rem 0; padding: 0.8rem;
+  background: var(--bg-alt); border: 1px solid var(--rule); border-radius: 4px;
+  color: var(--ink); text-decoration: none;
+}
+.article-feature:hover { border-color: var(--accent); }
+.article-feature img {
+  flex: 0 0 35%; width: 35%; max-width: 15rem; aspect-ratio: 4 / 3;
+  object-fit: cover; border-radius: 3px;
+}
+.article-feature-copy { display: flex; flex-direction: column; justify-content: center; gap: 0.35rem; }
+.article-feature-label { color: var(--accent); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.article-feature-copy strong { font-family: var(--font-head); font-size: 1.15rem; line-height: 1.35; }
+.article-feature-action { color: var(--accent); font-size: 0.9rem; }
+@media (max-width: 36rem) {
+  .article-feature { flex-direction: column; }
+  .article-feature img { width: 100%; max-width: none; }
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));

@@ -30,7 +30,8 @@ NZDO.concerts(String.raw`# ✂ ────────────── edit b
 # FIELDS
 #  year, date (YYYY-MM-DD), venue, venue_url, city, conductor, conductor_url,
 #  players, note, works, image, banner, programme, poster, donation,
-#  recipient, recipient_url, sponsors, links, youtube, quote
+#  recipient, recipient_url, sponsors, links, youtube, quote,
+#  article_title, article_url, article_image, article_image_alt
 
 # Reused sponsorship wording, referenced below as  sponsors = "standard"
 [sponsor_text]
@@ -61,6 +62,10 @@ donation = 9091.60
 recipient = "Hospice Taranaki"
 recipient_url = "https://hospicetaranaki.org.nz/"
 sponsors = "social"
+article_title = "Medics swap stethoscopes for sheet music and classical instruments"
+article_url = "https://www.rnz.co.nz/news/health/1866214/medics-swap-stethoscopes-for-sheet-music-and-classical-instruments"
+article_image = "concert_photos/2026_concert/053-img-9689.jpg"
+article_image_alt = "NZDO musicians performing to a full audience at the 2026 concert"
 links = [
   { text = "RNZ Concert interview with Ben Booker", url = "https://www.rnz.co.nz/concert/programmes/three-to-seven/audio/2019051849/booker-plays-beethoven" },
   { text = "RNZ Morning Report interview with Tim Wilkinson", url = "https://www.rnz.co.nz/national/programmes/morningreport/audio/2019052413/nz-doctor-s-orchestra-concert-taking-place-in-new-plymouth" },

@@ -271,6 +271,16 @@
     parts.push(`<p class="lede">${intro}</p>`);
     if (c.note) parts.push(`<p>${md(c.note)}</p>`);
 
+    if (c.article_url && c.article_title) {
+      const articleImage = c.article_image
+        ? `<img src="${esc(c.article_image)}" alt="${esc(c.article_image_alt || "NZDO musicians performing")}" loading="lazy">`
+        : "";
+      parts.push(`<a class="article-feature" href="${esc(c.article_url)}" target="_blank" rel="noopener">
+        ${articleImage}<span class="article-feature-copy"><span class="article-feature-label">RNZ article</span>
+        <strong>${esc(c.article_title)}</strong><span class="article-feature-action">Read the article <span aria-hidden="true">↗</span></span></span>
+      </a>`);
+    }
+
     parts.push(`<h2>Programme</h2><ul class="works">${(c.works || []).map((w) => `<li>${md(w)}</li>`).join("")}</ul>`);
 
     if (c.donation) {
