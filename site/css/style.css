@@ -95,7 +95,7 @@ h2 { font-size: 1.6rem; margin: 2.2rem 0 0.6rem; }
   text-align: center;
 }
 .banner.has-image {
-  background-position: center calc(50% + var(--banner-parallax-offset, 0px));
+  background-position: center calc(var(--banner-position, 50%) + var(--banner-parallax-offset, 0px));
   background-size: cover; background-repeat: no-repeat;
 }
 .banner.has-image::before {
@@ -113,7 +113,7 @@ h2 { font-size: 1.6rem; margin: 2.2rem 0 0.6rem; }
 .banner:not(.has-image) h1 { color: var(--ink); text-shadow: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  .banner.has-image { background-position: center; }
+  .banner.has-image { background-position: center var(--banner-position, 50%); }
 }
 
 /* ── layout ─────────────────────────────────────────────────── */
@@ -358,6 +358,7 @@ mark.todo { background: #ffe066; color: #000; padding: 0 0.25em; border-radius: 
   width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
   transition: opacity .2s;
 }
+.gallery img.tim-portrait { object-position: center top; }
 .gallery a:hover img { opacity: .85; }
 
 .pager {

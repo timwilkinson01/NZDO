@@ -154,6 +154,7 @@
     const h1 = main.querySelector("h1");
     if (h1) {
       setBanner(banner, h1.dataset.banner);
+      if (h1.dataset.bannerPosition) banner.style.setProperty("--banner-position", h1.dataset.bannerPosition);
       banner.append(h1);
     }
 
