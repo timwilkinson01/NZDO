@@ -67,6 +67,7 @@ article_url = "https://www.rnz.co.nz/life/music/medics-swap-stethoscopes-for-cla
 article_image = "concert_photos/2026_concert/053-img-9689.jpg"
 article_image_alt = "NZDO musicians performing to a full audience at the 2026 concert"
 links = [
+  { text = "Listen to the RNZ Morning Report audio feature", url = "https://www.rnz.co.nz/national/programmes/morningreport/audio/2019055662/medics-swap-stethoscopes-for-sheet-music" },
   { text = "RNZ Concert interview with Ben Booker", url = "https://www.rnz.co.nz/concert/programmes/three-to-seven/audio/2019051849/booker-plays-beethoven" },
   { text = "RNZ Morning Report interview with Tim Wilkinson", url = "https://www.rnz.co.nz/national/programmes/morningreport/audio/2019052413/nz-doctor-s-orchestra-concert-taking-place-in-new-plymouth" },
   { text = "Feature in The Post", url = "https://www.thepost.co.nz/nz-news/361082981/doctors-orchestra-hits-high-notes-hospice" },
